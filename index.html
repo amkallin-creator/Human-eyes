@@ -1,12 +1,314 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Human Eyes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human'eyes — Page vierge + OEM/ODM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <h1>Bienvenue sur Human Eyes</h1>
-  <p>Mon site est en ligne.</p>
+  <div class="page-shell">
+    <header class="topbar">
+      <a href="#" class="brand" aria-label="Human'eyes">
+        <span class="brand-main">Human'<span class="brand-accent">eyes</span></span>
+      </a>
+      <div class="topbar-note">Base visuelle + répertoire fabricants</div>
+
+      <nav class="tabs" aria-label="Navigation par onglets">
+        <button class="tab-button active" type="button" data-tab="accueil">Accueil</button>
+        <button class="tab-button" type="button" data-tab="fabricant">Fabricant OEM/ODM</button>
+        <button class="tab-button" type="button" data-tab="galerie">Galerie sourcing</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="tab-panel active" id="tab-accueil">
+        <section class="hero">
+          <div class="eyebrow">Le regard replacé au centre de l'humain</div>
+          <h1 class="hero-title">Une base <span class="accent">Human'eyes</span> prête à construire.</h1>
+          <p class="hero-subtitle">Page volontairement vide, avec une présence chaleureuse, éditoriale et premium, pensée pour accueillir ton contenu plus tard sans casser l'identité.</p>
+          <div class="hero-divider"></div>
+        </section>
+
+        <section class="content-frame">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <div class="panel-label">Zone principale</div>
+                <div class="panel-title">Canvas vierge</div>
+              </div>
+              <span class="status-dot" aria-hidden="true"></span>
+            </div>
+            <div class="panel-body">
+              <div class="blank-stage">
+                <div class="blank-stage-inner">
+                  <span class="blank-pill">Aucun contenu inséré</span>
+                  <h2 class="blank-title">Espace disponible pour ton futur contenu</h2>
+                  <p class="blank-text">Cette zone reste vide par choix. Elle peut ensuite accueillir un hero commercial, une présentation de marque, un formulaire, une galerie, une offre ou une landing page complète.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="panel info-card">
+            <div class="panel-head">
+              <div>
+                <div class="panel-label">Repères de charte</div>
+                <div class="panel-title">Fondations visuelles</div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="info-list">
+                <div class="info-item">
+                  <strong>Couleur cœur</strong>
+                  <span>Accent rose signal sur fond prune sombre, avec des tons poudrés pour conserver une sensation d'écoute, de proximité et de délicatesse.</span>
+                </div>
+                <div class="info-item">
+                  <strong>Ton visuel</strong>
+                  <span>Humain, rassurant, premium doux. L'ensemble évite l'effet clinique pour privilégier la relation, la confiance et l'accompagnement.</span>
+                </div>
+                <div class="info-item">
+                  <strong>Typographies</strong>
+                  <span>DM Serif Display pour la signature, Cormorant Garamond pour la dimension éditoriale, Outfit pour la lisibilité moderne.</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </section>
+
+      <section class="tab-panel" id="tab-fabricant">
+        <section class="oem-wrap">
+          <div class="hero" style="padding: 36px 0 6px;">
+            <div class="eyebrow">Base fournisseurs intégrée</div>
+            <h2 class="hero-title" style="font-size: clamp(38px, 5.4vw, 72px); max-width: 980px;">Fabricant <span class="accent">OEM/ODM</span></h2>
+            <p class="hero-subtitle" style="max-width: 860px;">Tableau intégré à la page avec filtres dynamiques, recherche rapide et export CSV des résultats visibles.</p>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">Entrées totales</div>
+              <div class="stat-value" id="stat-total">16</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Affichées après filtres</div>
+              <div class="stat-value" id="stat-visible">16</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Catégories</div>
+              <div class="stat-value" id="stat-categories">1</div>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="field">
+              <label for="searchInput">Recherche</label>
+              <input id="searchInput" type="text" placeholder="Nom, mail, site, WhatsApp..." />
+            </div>
+
+            <div class="field">
+              <label for="categoryFilter">Catégorie</label>
+              <select id="categoryFilter">
+                <option value="">Toutes</option>
+                <option value="Fabricant sur mesure">Fabricant sur mesure</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="alibabaFilter">Alibaba</label>
+              <select id="alibabaFilter">
+                <option value="">Tous</option>
+                <option value="yes">Avec lien Alibaba</option>
+                <option value="no">Sans lien Alibaba</option>
+              </select>
+            </div>
+
+            <button class="action-btn" id="downloadBtn" type="button">Télécharger le CSV</button>
+          </div>
+
+          <div class="table-panel">
+            <div class="table-header">
+              <div>
+                <div class="table-title">Répertoire fabricants OEM/ODM</div>
+                <div class="table-sub">Tu peux filtrer puis exporter uniquement les lignes affichées.</div>
+              </div>
+              <div class="table-sub" id="resultsLabel">16 résultat(s)</div>
+            </div>
+
+            <div class="table-scroll">
+              <table aria-describedby="resultsLabel">
+                <thead>
+                  <tr>
+                    <th>Fabricant / Fournisseur</th>
+                    <th>Catégorie</th>
+                    <th>Site web</th>
+                    <th>Alibaba</th>
+                    <th>Mail</th>
+                    <th>WhatsApp</th>
+                  </tr>
+                </thead>
+                <tbody id="oemTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+    
+      <section class="tab-panel" id="tab-galerie">
+        <section class="gallery-wrap">
+          <div class="hero" style="padding: 36px 0 6px;">
+            <div class="eyebrow">Intégration PDF prête au sourcing</div>
+            <h2 class="hero-title" style="font-size: clamp(38px, 5.4vw, 72px); max-width: 980px;">Galerie <span class="accent">sourcing</span></h2>
+            <p class="hero-subtitle" style="max-width: 860px;">Visuels du PDF intégrés dans le HTML, filtres de sélection, et export Excel basique des modèles cochés sans image.</p>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-label">Modèles intégrés</div>
+              <div class="stat-value" id="gallery-total">99</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Affichés</div>
+              <div class="stat-value" id="gallery-visible">99</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Sélectionnés</div>
+              <div class="stat-value" id="gallery-selected">0</div>
+            </div>
+          </div>
+
+          <div class="gallery-toolbar">
+            <div class="field">
+              <label for="gallerySearch">Recherche</label>
+              <input id="gallerySearch" type="text" placeholder="Référence, fabricant, coloris..." />
+            </div>
+
+            <div class="field">
+              <label for="galleryForme">Forme</label>
+              <select id="galleryForme">
+                <option value="">Toutes</option>
+                <option value="Cat-Eye/Rect">Cat-Eye/Rect</option>
+                <option value="Rect">Rect</option>
+                <option value="Round">Round</option>
+                <option value="Aviator">Aviator</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="galleryGenre">Genre</label>
+              <select id="galleryGenre">
+                <option value="">Tous</option>
+                <option value="Femme">Femme</option>
+                <option value="Unisexe">Unisexe</option>
+                <option value="Enfant">Enfant</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="galleryColoris">Coloris</label>
+              <select id="galleryColoris">
+                <option value="">Tous</option>
+                <option value="Black">Black</option>
+                <option value="Crystal clear">Crystal clear</option>
+                <option value="Lilac transparent">Lilac transparent</option>
+                <option value="Crystal rose">Crystal rose</option>
+                <option value="Pink transparent">Pink transparent</option>
+                <option value="Champagne transparent">Champagne transparent</option>
+                <option value="Nude pink transparent">Nude pink transparent</option>
+                <option value="Crystal peach">Crystal peach</option>
+                <option value="Clear grey">Clear grey</option>
+                <option value="Translucent grey">Translucent grey</option>
+                <option value="Clear blue">Clear blue</option>
+                <option value="Pink clear">Pink clear</option>
+                <option value="Black/blue">Black/blue</option>
+                <option value="Black/red">Black/red</option>
+                <option value="Blue clear">Blue clear</option>
+                <option value="Purple clear">Purple clear</option>
+                <option value="Blue smoke">Blue smoke</option>
+                <option value="Dark grey">Dark grey</option>
+                <option value="Purple smoke">Purple smoke</option>
+                <option value="Nude smoke">Nude smoke</option>
+                <option value="Blue grey">Blue grey</option>
+                <option value="Olive smoke">Olive smoke</option>
+                <option value="Green smoke">Green smoke</option>
+                <option value="Pink green">Pink green</option>
+                <option value="Orange">Orange</option>
+                <option value="Tortoise">Tortoise</option>
+                <option value="Amber tortoise">Amber tortoise</option>
+                <option value="Brown smoke">Brown smoke</option>
+                <option value="Brown">Brown</option>
+                <option value="Cream">Cream</option>
+                <option value="Green">Green</option>
+                <option value="Black pink">Black pink</option>
+                <option value="Grey smoke">Grey smoke</option>
+                <option value="Blue gradient">Blue gradient</option>
+                <option value="Black green">Black green</option>
+                <option value="Green rose">Green rose</option>
+                <option value="Mixed">Mixed</option>
+                <option value="Gold tortoise">Gold tortoise</option>
+                <option value="Rose gold">Rose gold</option>
+                <option value="Gold clear">Gold clear</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Black teal">Black teal</option>
+                <option value="Sky blue">Sky blue</option>
+                <option value="Champagne">Champagne</option>
+                <option value="Sage green">Sage green</option>
+                <option value="Blue speckled">Blue speckled</option>
+                <option value="Brown black">Brown black</option>
+                <option value="Brown rose">Brown rose</option>
+                <option value="Olive clear">Olive clear</option>
+                <option value="Gold">Gold</option>
+                <option value="Blue burgundy">Blue burgundy</option>
+              </select>
+            </div>
+
+            <button class="action-btn" id="gallerySelectVisible" type="button">Sélectionner visibles</button>
+            <button class="action-btn" id="galleryExportBtn" type="button">Exporter XLS</button>
+          </div>
+
+          <div class="selection-bar">
+            <div class="selection-text" id="galleryResultsLabel">99 modèle(s) affiché(s)</div>
+            <div class="selection-text">Fabricant : <strong>Ruisen</strong> · MOQ : <strong>5+</strong> · Prix : <strong>2,5 à 5 $US</strong></div>
+          </div>
+
+          <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>Human'eyes</span>
+      <span>Structure vierge</span>
+      <span>Onglet OEM/ODM intégré</span>
+    </footer>
+  </div>
+
+
+  
+  
+
+  
+
+  <div class="page-image-modal" id="pageImageModal" aria-hidden="true">
+    <div class="page-image-panel" role="dialog" aria-modal="true" aria-labelledby="pageImageTitle">
+      <div class="page-image-head">
+        <div class="page-image-title" id="pageImageTitle">Page source</div>
+        <button class="page-image-close" id="pageImageClose" type="button">Fermer</button>
+      </div>
+      <div class="page-image-body">
+        <img id="pageImageView" src="" alt="Page PDF source">
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="assets/js/app.js"></script>
+
+
 </body>
 </html>
