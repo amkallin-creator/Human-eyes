@@ -111,9 +111,9 @@
 
     const galleryGrid = document.getElementById('galleryGrid');
     const gallerySearch = document.getElementById('gallerySearch');
-    const galleryFabricant = document.getElementById('galleryFabricant');
     const galleryForme = document.getElementById('galleryForme');
     const galleryGenre = document.getElementById('galleryGenre');
+    const galleryFabricant = document.getElementById('galleryFabricant');
     const galleryColoris = document.getElementById('galleryColoris');
     const galleryResultsLabel = document.getElementById('galleryResultsLabel');
     const galleryVisible = document.getElementById('gallery-visible');
@@ -182,9 +182,9 @@
 
     function getFilteredProducts() {
       const q = (gallerySearch?.value || '').trim().toLowerCase();
-      const fabricant = galleryFabricant?.value || '';
       const forme = galleryForme?.value || '';
       const genre = galleryGenre?.value || '';
+      const fabricant = galleryFabricant?.value || '';
       const coloris = galleryColoris?.value || '';
 
       return sourcingProducts.filter(item => {
@@ -199,9 +199,9 @@
         ].join(' ').toLowerCase();
 
         return (!q || hay.includes(q))
-          && (!fabricant || item.fabricant === fabricant)
           && (!forme || item.forme_monture === forme)
           && (!genre || item.genre === genre)
+          && (!fabricant || item.fabricant === fabricant)
           && (!coloris || item.coloris_principal === coloris);
       });
     }
@@ -215,9 +215,9 @@
         if (unique.includes(current)) select.value = current;
       };
 
-      buildOptions(galleryFabricant, sourcingProducts.map(item => item.fabricant), 'Tous');
       buildOptions(galleryForme, sourcingProducts.map(item => item.forme_monture), 'Toutes');
       buildOptions(galleryGenre, sourcingProducts.map(item => item.genre), 'Tous');
+      buildOptions(galleryFabricant, sourcingProducts.map(item => item.fabricant), 'Tous');
       buildOptions(galleryColoris, sourcingProducts.map(item => item.coloris_principal), 'Tous');
     }
 
@@ -325,9 +325,9 @@
     }
 
     gallerySearch?.addEventListener('input', renderGallery);
-    galleryFabricant?.addEventListener('change', renderGallery);
     galleryForme?.addEventListener('change', renderGallery);
     galleryGenre?.addEventListener('change', renderGallery);
+    galleryFabricant?.addEventListener('change', renderGallery);
     galleryColoris?.addEventListener('change', renderGallery);
     gallerySelectVisible?.addEventListener('click', selectVisible);
     galleryExportBtn?.addEventListener('click', exportSelectedXls);
